@@ -5,6 +5,16 @@ public class bst {
 	public bst() { // create an empty tree
 		root = null;
 	}
+
+	public boolean search(int key) {
+		node current = root;
+		while(current != null) {
+			if(current.key == key) return true;
+			else if(current.key > key) current = current.left;
+			else current = current.right;
+		}
+		return false;
+	}
 	
 	void insert(int key) {
 		if(root == null) root = new node(key); // when tree is empty
